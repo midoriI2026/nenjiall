@@ -1,5 +1,8 @@
 // ==UserScript==
 // @name         一括読み込み
+// @match        https://midorinet-iwate.cybozu.com/o/ag.cgi?page=DBRecord&did=35*
+// @match        https://midorinet-iwate.cybozu.com/o/ag.cgi?page=DBForm&did=35*
+// @match        https://midorinet-iwate.cybozu.com/o/ag.cgi?page=DBTaskForm&did=35*
 // @require      https://raw.githubusercontent.com/midoriI2026/nenji1/main/nenji1.js
 // @require      https://raw.githubusercontent.com/midoriI2026/nenji2/main/nenji2.js
 // ==/UserScript==
