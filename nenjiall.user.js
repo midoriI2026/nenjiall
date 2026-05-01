@@ -6,15 +6,23 @@
 // ==/UserScript==
 (function() {
   'use strict';
-  const url = location.href;
-  const isDid35 = url.includes("did=35");
-  const isTargetPage =
-  url.includes("page=DBRecord") || url.includes("page=DBForm");  
-  if (isDid35 && isTargetPage) {
-    nenji1();
+
+  const params = new URLSearchParams(location.search);
+
+  function isPage(page, did) {
+    return params.get("page") === page && params.get("did") === String(did);
   }
-  // DBRecord + did=35 のときだけ実行
-  if (url.includes("page=DBTaskForm") && url.includes("did=35")) {
-    nenji2();
-  }
+
+  window.addEventListener('load', () => {
+
+    if (isPage("DBRecord", 35) || isPage("DBForm", 35)) {
+      nenji1();
+    }
+
+    if (isPage("DBTaskForm", 35)) {
+      nenji2();
+    }
+
+  });
+
 })();
